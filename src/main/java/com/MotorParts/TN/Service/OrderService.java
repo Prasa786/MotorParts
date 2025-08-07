@@ -21,4 +21,13 @@ public class OrderService {
         return orderRepo.findById(id).orElseThrow(() -> new RuntimeException("No Order Found"));
     }
 
+//    public Orders CreateOrder(Long part_id,int quantity){
+//        Orders order = orderRepo.findById(part_id).orElseThrow(()-> new RuntimeException("Part in the Id is not found"));
+//        Integer StockQuantity=order.getQuantity();
+//        if(StockQuantity < quantity){
+//            throw new RuntimeException("Insuffient stock");
+//        }
+//        pa
+//    }
+
 }

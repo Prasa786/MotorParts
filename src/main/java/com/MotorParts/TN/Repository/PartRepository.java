@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface PartRepository extends JpaRepository<Part,Long> {
-
+@Query(value="Select * from parts where stockQuantity < 20" ,nativeQuery=true)
+    List<Part> findByStockQuantity();
 }

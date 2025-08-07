@@ -18,7 +18,7 @@ public class Orders {
 
     @ManyToOne
     @JoinColumn(name="Part_Id")
-    private int partId;
+    private Part partId;
 
     private Integer quantity;
     private String status;
