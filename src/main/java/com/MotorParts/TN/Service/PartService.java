@@ -44,9 +44,9 @@ public class PartService {
         return  total;
     }
 
-    public String addParts(Part part){
-        partRepo.save(part);
-        return "The Part is added Successfully";
+    public Part addParts(Part part){
+        return partRepo.save(part);
+
     }
 }
 
