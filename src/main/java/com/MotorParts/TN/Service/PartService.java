@@ -4,7 +4,7 @@ import com.MotorParts.TN.Repository.PartRepository;
 import com.MotorParts.TN.Model.Part;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import  java.math.*;
+
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ public class PartService {
 
     public String addParts(Part part){
         partRepo.save(part);
-        return "The Part is added Sucessfully";
+        return "The Part is added Successfully";
     }
 }
 
