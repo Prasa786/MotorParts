@@ -66,6 +66,13 @@ public class OrderController {
        return ResponseEntity.status(HttpStatus.CREATED).body(orders1);
     }
 
+    @PutMapping("/{id}/complete")
+    public ResponseEntity<Orders> UpdateOrder(@PathVariable Long id){
+        if(id==null || id<0){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+        return ResponseEntity.ok().body(service.completeOrder(id));
+    }
 
 
 }
