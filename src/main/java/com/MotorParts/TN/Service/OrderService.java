@@ -43,8 +43,26 @@ public class OrderService {
         order.setStatus("IN PROGRESS");
         return orderRepo.save(order);
     }
+    public List<Orders> processBulkOrders(List<Orders> orders) {
+        List<Orders> SuccessfulOrder = new ArrayList<>();
+        for (Orders order : orders) {
+            try {
+                Orders createdOrder = CreateOrder(order.getPartId().getPart_id(), order.getPartId().getStockQuantity());
+                SuccessfulOrder.add(createdOrder);
+            } catch (Exception e) {
+                System.out.println("Failed to create order for part ID " + order.getPartId().getPart_id() + ": " + e.getMessage());
 
+            }
+        }
+        return SuccessfulOrder;
+    }
 
+    public Orders  completeOrder(Long orderId){
+        Orders order=orderRepo.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("The Order Id is Invalid"));
+        order.setStatus("COMPLETED");
+        return orderRepo.save(order);
+    }
 
 }
 

@@ -43,5 +43,10 @@ public class PartService {
         }
         return  total;
     }
+
+    public String addParts(Part part){
+        partRepo.save(part);
+        return "The Part is added Sucessfully";
+    }
 }
 
