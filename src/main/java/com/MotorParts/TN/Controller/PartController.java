@@ -29,10 +29,10 @@ public class PartController {
         return partService.predictRestockDate(id);
     }
 
-    @PostMapping("/orders")
-    public Orders createOrder(@RequestParam Long partId, @RequestParam int quantity) {
-        return orderService.CreateOrder(partId, quantity);
-    }
+//    @PostMapping("/orders")
+//    public Orders createOrder(@RequestParam Long partId, @RequestParam int quantity) {
+//        return orderService.CreateOrder(partId, quantity);
+//    }
 
     @PostMapping
     public Part addParts(@RequestBody Part part){
