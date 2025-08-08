@@ -16,8 +16,7 @@ public class PartController {
     @Autowired
     private PartService partService;
 
-    @Autowired
-    private OrderService orderService;
+
 
     @GetMapping("/parts/low-stock")
     public List<Part> getLowStockParts() {
@@ -29,10 +28,6 @@ public class PartController {
         return partService.predictRestockDate(id);
     }
 
-//    @PostMapping("/orders")
-//    public Orders createOrder(@RequestParam Long partId, @RequestParam int quantity) {
-//        return orderService.CreateOrder(partId, quantity);
-//    }
 
     @PostMapping
     public Part addParts(@RequestBody Part part){
